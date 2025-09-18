@@ -30,7 +30,7 @@ npm run dev
 
 🎯 Funcionalidades
 Visualizar todos pokémons de Kanto
-Filtrar por nome (Em desenvolvimento)
+Filtrar por nome
 Visualizar informações como base status e tipagem (Em desenvolvimento)
 Interface simples e responsiva.
 
