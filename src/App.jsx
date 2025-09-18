@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useState} from 'react'
 import './App.css'
 
 //Components
 import Pokedex from './components/Pokedex'
 import Search from './components/Search'
+import PokeInfo from "./components/PokeInfo"
 
 function App() {
 
@@ -3094,24 +3095,31 @@ function App() {
       "Speed": 100
     }
   }
-]
+  ]
 
-const [search, setSearch] = useState('');
+  const [search, setSearch] = useState('');
+  const [pokeSelected, setPokeSelected] = useState(null);
+
+  const openPokeInfo = (poke) => setPokeSelected(poke);
+  const closePokeInfo = () => setPokeSelected(null);
 
   return (
     <main className="page">
       <section className="pokedex">
         <div className="pokedex-header">
           <h2>Pokédex (Kanto)</h2>
-          <Search search={search} setSearch={setSearch}/>
+          <Search search={search} setSearch={setSearch} />
         </div>
 
         <div className="pokedex-grid">
-          {pokemon.filter((poke)=> poke.name.english.toLowerCase().includes(search.toLocaleLowerCase()))
-          .map((poke) => (
-            <Pokedex key={poke.id} poke={poke} />
-          ))}
+          {pokemon.filter((poke) => poke.name.english.toLowerCase().includes(search.toLocaleLowerCase()))
+            .map((poke) => (
+              <Pokedex key={poke.id} poke={poke} openPokeInfo={openPokeInfo}/>
+            ))}
         </div>
+        {pokeSelected && (
+          <PokeInfo poke={pokeSelected} onClose={closePokeInfo} />
+        )}
       </section>
     </main>
 
