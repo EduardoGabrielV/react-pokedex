@@ -1,0 +1,113 @@
+*{
+
+  /* Settings padrão */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  /* Para o usuario não poder selecionar nada arrastando o mouse */
+  user-select: none;
+  -webkit-user-select: none; /* Para navegadores baseados em WebKit (Chrome, Safari) */
+  -moz-user-select: none; /* Para Firefox */
+  -ms-user-select: none; /* Para Internet Explorer/Edge */
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-image: url("./img/background.jpg");
+  background-position: center;
+  background-size: cover;
+  margin: 0;
+}
+
+.page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.pokedex {
+  width: min(1100px, 95vw);
+  height: min(720px, 80vh);
+  background: linear-gradient(#e53935, #c62828);
+  border: 6px solid #8b1c1c;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.pokedex-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  color: #fff;
+  text-shadow: 0 1px 0 rgba(0,0,0,.35);
+  border-bottom: 3px solid rgba(0,0,0,.15);
+}
+
+.pokedex-search{
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    width: 50%;
+    text-align: center;
+}
+
+.pokedex-grid {
+  flex: 1; 
+  background: #f7f7f9;
+  padding: 16px;
+  overflow: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+.poke-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.08);
+  padding: 10px;
+  text-align: center;
+  display: grid;
+  grid-template-rows: auto auto 1fr;
+  align-items: start;
+}
+
+.poke-card p {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.poke-card p:first-child {/* id */
+  font-weight: 700;
+  font-size: 12px;
+  color: #9aa0a6;
+}
+
+.poke-card p:nth-child(2) {/* nome */
+  font-weight: 700;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 6px;
+}
+
+.poke-img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  justify-self: center;
+  cursor: pointer;
+}
