@@ -1,3 +1,5 @@
+EDUARDO GABRIEL VICENTE
+
 📝 Pokédex
 Uma aplicação simples para visualizar todos os 151 Pokémons de Kanto desenvolvida com React e Vite.
 Permite Visualizar diversos atributos sobre os pokémons.
